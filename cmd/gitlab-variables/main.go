@@ -59,7 +59,7 @@ func main() {
 	defer envFile.Close()
 
 	for key, value := range allVariables {
-		fmt.Fprintf(envFile, "%s=\"%s\"\n", key, value)
+		fmt.Fprintf(envFile, "%s=%s\n", key, value)
 	}
 
 	fmt.Println("Generated variables.env file with merged variables")
