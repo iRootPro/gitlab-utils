@@ -50,17 +50,8 @@ func main() {
 		}
 	}
 
-	// Запись в файл variables.env
-	envFile, err := os.Create("variables.env")
-	if err != nil {
-		fmt.Printf("Error creating variables.env: %v\n", err)
-		return
-	}
-	defer envFile.Close()
-
+	// Output variable to stdout
 	for key, value := range allVariables {
-		fmt.Fprintf(envFile, "%s=%s\n", key, value)
+		fmt.Printf("%s=%s\n", key, value)
 	}
-
-	fmt.Println("Generated variables.env file with merged variables")
 }
