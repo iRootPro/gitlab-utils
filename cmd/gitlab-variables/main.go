@@ -38,7 +38,6 @@ func main() {
 
 	for _, file := range files {
 		if _, err := os.Stat(file); err == nil {
-			fmt.Printf("Extracting from %s\n", file)
 			variables, err := extractVariables(file)
 			if err != nil {
 				fmt.Printf("Error reading %s: %v\n", file, err)
