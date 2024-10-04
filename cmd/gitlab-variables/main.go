@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"gopkg.in/yaml.v3"
 )
@@ -51,7 +52,11 @@ func main() {
 	}
 
 	// Output variable to stdout
+	var vars []string
 	for key, value := range allVariables {
-		fmt.Printf("%s=%s\n", key, value)
+		vars = append(vars, fmt.Sprintf("%s=%s", key, value))
 	}
+
+	fmt.Print(strings.Join(vars, "\n"))
+
 }
